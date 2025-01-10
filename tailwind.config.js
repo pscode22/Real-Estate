@@ -21,7 +21,10 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {}
-  	}
+  	},
+	colors : {
+		'primary'  : '#7268ed'
+	}
   },
   plugins: [require("tailwindcss-animate")],
 }
