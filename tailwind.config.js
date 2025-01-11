@@ -23,7 +23,9 @@ module.exports = {
   		colors: {}
   	},
 	colors : {
-		'primary'  : '#7268ed'
+		'primary'  : '#7268ed',
+		'white' : '#ffffff',
+		'black' : '#000000'
 	}
   },
   plugins: [require("tailwindcss-animate")],

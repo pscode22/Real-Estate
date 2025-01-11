@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Favorites() {
+export default function Card() {
   return (
     <div>
-      Favorites
+      
     </div>
   )
 }
