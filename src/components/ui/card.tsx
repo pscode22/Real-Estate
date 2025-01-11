@@ -7,7 +7,7 @@ import { TbBath } from 'react-icons/tb';
 
 export default function Card() {
   return (
-    <section className="flex flex-col gap-4">
+    <section className="grid grid-cols-3 lg:grid-cols-4 gap-5">
       {rentalData.hits.map((item) => (
         <div className="card" key={item.id}>
           <div
@@ -60,17 +60,17 @@ export default function Card() {
               style={{ gridTemplateColumns: 'auto auto auto' }}
             >
               <p className="flex gap-[0.1875rem] align-middle ">
-                <IoBedOutline className="text-[0.9375rem] text-primary" />{' '}
+                <IoBedOutline className="text-[0.9375rem] text-primary" />
                 {item.rooms} Bed{item.rooms > 1 ? 's' : null}
               </p>
 
               <p className="flex gap-[0.1875rem] align-middle ">
-                <TbBath className="text-[0.9375rem] text-primary" />{' '}
+                <TbBath className="text-[0.9375rem] text-primary" />
                 {item.baths} Bathroom{item.baths > 1 ? 's' : null}
               </p>
 
               <p className="flex gap-[0.1875rem] align-middle ">
-                <BsGridFill className="text-[0.9375rem] text-primary" />{' '}
+                <BsGridFill className="text-[0.9375rem] text-primary" />
                 {item.area.toFixed(2)} sqft
               </p>
             </footer>
