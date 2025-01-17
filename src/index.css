@@ -16,14 +16,12 @@ body {
 .cardContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
-  /* display:  flex;
-  flex-wrap: wrap;
-  justify-content: center; */
   gap: 24px;
   position: relative;
   z-index: 1;
   justify-content: center;
 }
+
 .card {
   border : none;
   /* width : 300px ; */
