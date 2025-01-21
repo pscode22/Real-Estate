@@ -26,7 +26,7 @@ export default function Home() {
       {/* Property Cards */}
       <section className="cardContainer">
         {rentalData.hits.map((item) => (
-          <Card item={item} />
+          <Card item={item} key={`${item.id}`} />
         ))}
       </section>
     </main>

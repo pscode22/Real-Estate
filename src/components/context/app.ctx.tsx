@@ -1,9 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useMemo,
-  useState,
-} from 'react';
+import { createContext, useContext, useMemo, useState } from 'react';
 import { ELocation, EPropertyType } from '../types/constants';
 
 type CtxSearchSettings = {
@@ -34,14 +29,17 @@ const SearchSettingsContext = createContext<{
 });
 
 // Provider Component
-export const SearchSettingsProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const SearchSettingsProvider: React.FC<{
+  children: React.ReactNode;
+}> = ({ children }) => {
   const [searchSettings, setSearchSettings] = useState<CtxSearchSettings>(
     initialSearchSettingsValue
   );
 
-  const memoedValue = useMemo(() => ({searchSettings, setSearchSettings}), [])
+  const memoedValue = useMemo(
+    () => ({ searchSettings, setSearchSettings }),
+    [searchSettings]
+  );
 
   return (
     <SearchSettingsContext.Provider value={memoedValue}>
@@ -52,6 +50,3 @@ export const SearchSettingsProvider: React.FC<{ children: React.ReactNode }> = (
 
 // Custom Hook
 export const useSearchSettings = () => useContext(SearchSettingsContext);
-
-
-
