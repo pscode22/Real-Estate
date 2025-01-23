@@ -7,8 +7,6 @@ export default function Location() {
   const { searchSettings, setSearchSettings } = useSearchSettings();
   const [isOpen, setIsOpen] = useState(false);
 
-  // console.log(searchSettings);
-
   const handleSelect = (value: ELocation) => {
     console.log(searchSettings, value);
     setSearchSettings((e) => ({ ...e, location: value }));
@@ -57,34 +55,6 @@ export default function Location() {
           </div>
         </>
       )}
-
-      {/* className="dropDownListItems py-[10px] px-[5px] fw-bolder cursor-pointer hover:bg-primary hover:text-white focus:bg-[#e8e7e7] focus:text-primary"
-style={{ borderBottom: '2px solid #f0f0f0' }} */}
-
-      {/* {isOpen && (
-        <div
-          className="dropDownTypes absolute w-[160px] ml-1 bg-white z-10"
-          style={{
-            boxShadow:
-              'rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px',
-          }}
-        >
-          <div>
-            {data[5]?.states?.map((item) => (
-              <p
-                className="dropDownListItems py-[10px] px-[5px] cursor-pointer hover:bg-primary hover:text-white focus:bg-[#e8e7e7] focus:text-primary"
-                key={item.isoCode}
-                onClick={(e) => {
-                //  if(ELocation)
-                }}
-                style={{ borderBottom: '2px solid #f0f0f0' }}
-              >
-                {item.name}
-              </p>
-            ))}
-          </div>
-        </div>
-      )} */}
     </div>
   );
 }

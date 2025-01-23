@@ -1,4 +1,5 @@
 import Location from '@/components/location';
+import Price from '@/components/price';
 import Card from '@/components/ui/card';
 import { rentalData } from '@/lib/data';
 
@@ -18,7 +19,7 @@ export default function Home() {
         style={filterContainerStyle}
       >
         <Location />
-        <Location />
+        <Price />
         <Location />
         <Location />
       </section>
