@@ -102,7 +102,7 @@ export default function Price() {
         return (
           <div
             key={value}
-            onClick={() => handleSelect({ value, option: 'minPrice' })}
+            onClick={() => handleSelect({ value, option: 'maxPrice' })}
             className="py-[10px] px-[5px] font-medium cursor-pointer hover:bg-primary
                          hover:text-white focus:bg-[#e8e7e7] focus:text-primary z-10"
             style={{ borderBottom: '2px solid #f0f0f0' }}
@@ -116,7 +116,7 @@ export default function Price() {
 
   return (
     <div className="border-r-2 flex w-full gap-3 border-r-[#f0f0f0] relative">
-      <div className="">
+      <div>
         <p className="font-semibold text-secondary">Price</p>
         <p className="font-bold text-black w-full">
           {millify(searchSettings.minPrice)} AED -{' '}

@@ -17,7 +17,7 @@ export default function Location() {
 
   return (
     <div className="border-r-2 flex w-full gap-3 border-r-[#f0f0f0] relative">
-      <div className="">
+      <div>
         <p className="font-semibold text-secondary">Location</p>
         <p className="font-bold text-black w-full">{searchSettings.location}</p>
       </div>
