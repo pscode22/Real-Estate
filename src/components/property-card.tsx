@@ -5,7 +5,7 @@ import { GoUnverified, GoVerified } from 'react-icons/go';
 import { IoBedOutline } from 'react-icons/io5';
 import { TbBath } from 'react-icons/tb';
 
-export default function Card({ item }: { item: Property }) {
+export default function PropertyCard({ item }: { item: Property }) {
   return (
     <div className="card" key={item.id}>
       <div

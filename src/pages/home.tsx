@@ -1,14 +1,14 @@
 import Location from '@/components/location';
 import Price from '@/components/price';
-import Card from '@/components/ui/card';
+import Card from '@/components/property-card';
 import { rentalData } from '@/lib/data';
 
-const filterContainerStyle : React.CSSProperties = {
+const filterContainerStyle: React.CSSProperties = {
   borderRadius: '.4rem',
   boxShadow: ' 0 0 0 1px rgba(0, 0, 0, .05)',
-  gridTemplateColumns : 'repeat(auto-fit, minmax(150px, 1fr))',
-  rowGap : '1rem',
-  columnGap : '1.5rem'
+  gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+  rowGap: '1rem',
+  columnGap: '1.5rem',
 };
 
 export default function Home() {
@@ -20,8 +20,6 @@ export default function Home() {
       >
         <Location />
         <Price />
-        <Location />
-        <Location />
       </section>
 
       {/* Property Cards */}
