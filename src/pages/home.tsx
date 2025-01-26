@@ -22,8 +22,7 @@ export default function Home() {
       >
         <Location />
         <Price />
-        <Price />
-        {/* <BedsNBaths /> */}
+        <BedsNBaths />
         <PropertyType />
       </section>
 

@@ -1,7 +1,7 @@
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import { useState } from 'react';
 import { useSearchSettings } from '../context/app.ctx';
-import { ELocation, EPropertyType } from '../types/constants';
+import { EPropertyType } from '../types/constants';
 import DropdownBox from './ui/dropdown-box';
 
 export default function PropertyType() {
