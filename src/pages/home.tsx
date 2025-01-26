@@ -1,9 +1,12 @@
-import BedsNBaths from '@/components/beds-bath';
+import BedsNBaths from '@/components/beds-n-baths';
 import Location from '@/components/location';
 import Price from '@/components/price';
-import Card from '@/components/property-card';
+import PropertyCard from '@/components/property-card';
 import PropertyType from '@/components/property-type';
+import { Button } from '@/components/ui/button';
+import { useFavProperties } from '@/context/fav.ctx';
 import { rentalData } from '@/lib/data';
+import { Property } from '@/types';
 
 const filterContainerStyle: React.CSSProperties = {
   borderRadius: '.4rem',
@@ -14,6 +17,27 @@ const filterContainerStyle: React.CSSProperties = {
 };
 
 export default function Home() {
+  const { favorites, setFavorites } = useFavProperties();
+
+  const handleFavBtnClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    item: Property
+  ) => {
+    e.preventDefault();
+
+    if (favorites.properties) {
+      if (favorites.properties.some((e) => e.id === item.id)) {
+        setFavorites({
+          properties: favorites.properties.filter((e) => e.id !== item.id),
+        });
+      } else {
+        setFavorites({ properties: [...favorites.properties, item] });
+      }
+    } else {
+      setFavorites({ properties: [item] });
+    }
+  };
+  
   return (
     <main>
       <section
@@ -26,10 +50,25 @@ export default function Home() {
         <PropertyType />
       </section>
 
+      <div className="flex align-center justify-center mb-5">
+        <Button variant="default" className="bg-primary text-white rounded">
+          Search
+        </Button>
+      </div>
+
       {/* Property Cards */}
       <section className="cardContainer">
         {rentalData.hits.map((item) => (
-          <Card item={item} key={`${item.id}`} />
+          <PropertyCard
+            item={item}
+            key={`${item.id}`}
+            isFav={
+              favorites.properties
+                ? favorites.properties.some((e) => e.id === item.id)
+                : false
+            }
+            favBtnClick={handleFavBtnClick}
+          />
         ))}
       </section>
     </main>
